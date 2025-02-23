@@ -31,118 +31,122 @@ export class CalculatorComponent {
     {
       operation: 'clear',
       displayValue: 'C',
-      handleClick: () => this.handleClear(),
+      handleClick: () => this.handleClear(this.currentValue),
     },
     {
       operation: 'percent',
       displayValue: '%',
-      handleClick: () => this.handlePercent(),
+      handleClick: () => this.appendSymbol('%'),
     },
     {
       operation: 'digit7',
       displayValue: '7',
-      handleClick: () => this.handleDigit('7'),
+      handleClick: () => this.appendSymbol('7'),
     },
     {
       operation: 'digit8',
       displayValue: '8',
-      handleClick: () => this.handleDigit('8'),
+      handleClick: () => this.appendSymbol('8'),
     },
     {
       operation: 'digit9',
       displayValue: '9',
-      handleClick: () => this.handleDigit('9'),
+      handleClick: () => this.appendSymbol('9'),
     },
     {
       operation: 'divide',
       displayValue: '/',
-      handleClick: () => this.handleDivide(),
+      handleClick: () => this.appendSymbol('/'),
     },
     {
       operation: 'digit4',
       displayValue: '4',
-      handleClick: () => this.handleDigit('4'),
+      handleClick: () => this.appendSymbol('4'),
     },
     {
       operation: 'digit5',
       displayValue: '5',
-      handleClick: () => this.handleDigit('5'),
+      handleClick: () => this.appendSymbol('5'),
     },
     {
       operation: 'digit6',
       displayValue: '6',
-      handleClick: () => this.handleDigit('6'),
+      handleClick: () => this.appendSymbol('6'),
     },
     {
       operation: 'multiply',
       displayValue: '*',
-      handleClick: () => this.handleMultiply(),
+      handleClick: () => this.appendSymbol('*'),
     },
     {
       operation: 'digit1',
       displayValue: '1',
-      handleClick: () => this.handleDigit('1'),
+      handleClick: () => this.appendSymbol('1'),
     },
     {
       operation: 'digit2',
       displayValue: '2',
-      handleClick: () => this.handleDigit('2'),
+      handleClick: () => this.appendSymbol('2'),
     },
     {
       operation: 'digit3',
       displayValue: '3',
-      handleClick: () => this.handleDigit('3'),
+      handleClick: () => this.appendSymbol('3'),
     },
     {
       operation: 'subtract',
       displayValue: '-',
-      handleClick: () => this.handleSubtract(),
+      handleClick: () => this.appendSymbol('-'),
     },
     {
       operation: 'digit0',
       displayValue: '0',
-      handleClick: () => this.handleDigit('0'),
+      handleClick: () => this.appendSymbol('0'),
     },
     {
       operation: 'point',
       displayValue: '.',
-      handleClick: () => this.handlePoint(),
+      handleClick: () => this.appendSymbol('.'),
     },
     {
       operation: 'equals',
       displayValue: '=',
-      handleClick: () => this.handleEquals(),
+      handleClick: () => this.appendSymbol('='),
     },
     {
       operation: 'add',
       displayValue: '+',
-      handleClick: () => this.handleAdd(),
+      handleClick: () => this.appendSymbol('+'),
     },
   ];
 
   public currentValue: string = '0';
 
-  public handleAdd() {}
-
-  public handleAllClear() {}
-
-  public handleClear() {}
-
-  public handleDigit(digit: string) {
-    this.currentValue += digit;
+  public appendSymbol(symbol: string) {
+    this.currentValue += symbol;
   }
 
-  public handleDivide() {}
+  public handleAllClear() {
+    this.currentValue = '0';
+  }
 
-  public handleEquals() {}
+  public handleClear(value: string) {
+    const lastSymbolIndex = value.length - 1;
 
-  public handleMultiply() {}
-
-  public handlePercent() {}
-
-  public handlePoint() {}
-
-  public handleSubtract() {}
+    if (
+      value[lastSymbolIndex] == '+' ||
+      value[lastSymbolIndex] == '-' ||
+      value[lastSymbolIndex] == '*' ||
+      value[lastSymbolIndex] == '/'
+    ) {
+      this.currentValue = value;
+    } else if (lastSymbolIndex > 0) {
+      value = value.slice(0, lastSymbolIndex);
+      this.handleClear(value);
+    } else {
+      this.currentValue = '0';
+    }
+  }
 
   public handleToggleTheme() {}
 }
