@@ -2,10 +2,14 @@ import { Component } from '@angular/core';
 
 import { ButtonConfig } from '../interfaces/button-config.interface';
 import { CalculatorButtonsDirective } from '../calculator-buttons.directive';
+import { CalculatorDisplayComponent } from './calculator-display/calculator-display.component';
 
 @Component({
   selector: 'app-calculator',
   imports: [
+    // components
+    CalculatorDisplayComponent,
+
     // directives
     CalculatorButtonsDirective,
   ],
