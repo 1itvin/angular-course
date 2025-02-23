@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-calculator-button',
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './calculator-button.component.html',
   styleUrl: './calculator-button.component.scss',
 })
-export class CalculatorButtonComponent {}
+export class CalculatorButtonComponent {
+  @Input() operation: string = '';
+  @Input() displayValue: string = '';
+  @Input() handleClick: () => void = () => {};
+}
