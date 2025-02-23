@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ButtonConfig } from '../interfaces/button-config.interface';
 import { CalculatorButtonsDirective } from '../calculator-buttons.directive';
 import { CalculatorDisplayComponent } from './calculator-display/calculator-display.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-calculator',
@@ -12,6 +13,9 @@ import { CalculatorDisplayComponent } from './calculator-display/calculator-disp
 
     // directives
     CalculatorButtonsDirective,
+
+    // modules
+    CommonModule,
   ],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.scss',
@@ -120,6 +124,8 @@ export class CalculatorComponent {
     },
   ];
 
+  public currentTheme: string = 'light-theme';
+
   public currentValue: string = '0';
 
   public appendSymbol(symbol: string) {
@@ -148,5 +154,8 @@ export class CalculatorComponent {
     }
   }
 
-  public handleToggleTheme() {}
+  public handleToggleTheme() {
+    this.currentTheme =
+      this.currentTheme === 'light-theme' ? 'dark-theme' : 'light-theme';
+  }
 }
