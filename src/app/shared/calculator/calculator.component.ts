@@ -41,17 +41,17 @@ export class CalculatorComponent {
     {
       operation: 'digit7',
       displayValue: '7',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('7'),
     },
     {
       operation: 'digit8',
       displayValue: '8',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('8'),
     },
     {
       operation: 'digit9',
       displayValue: '9',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('9'),
     },
     {
       operation: 'divide',
@@ -61,17 +61,17 @@ export class CalculatorComponent {
     {
       operation: 'digit4',
       displayValue: '4',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('4'),
     },
     {
       operation: 'digit5',
       displayValue: '5',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('5'),
     },
     {
       operation: 'digit6',
       displayValue: '6',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('6'),
     },
     {
       operation: 'multiply',
@@ -81,17 +81,17 @@ export class CalculatorComponent {
     {
       operation: 'digit1',
       displayValue: '1',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('1'),
     },
     {
       operation: 'digit2',
       displayValue: '2',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('2'),
     },
     {
       operation: 'digit3',
       displayValue: '3',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('3'),
     },
     {
       operation: 'subtract',
@@ -101,7 +101,7 @@ export class CalculatorComponent {
     {
       operation: 'digit0',
       displayValue: '0',
-      handleClick: () => this.handleDigit(),
+      handleClick: () => this.handleDigit('0'),
     },
     {
       operation: 'point',
@@ -120,13 +120,17 @@ export class CalculatorComponent {
     },
   ];
 
+  public currentValue: string = '0';
+
   public handleAdd() {}
 
   public handleAllClear() {}
 
   public handleClear() {}
 
-  public handleDigit() {}
+  public handleDigit(digit: string) {
+    this.currentValue += digit;
+  }
 
   public handleDivide() {}
 

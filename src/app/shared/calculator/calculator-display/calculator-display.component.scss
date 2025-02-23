@@ -1,4 +1,10 @@
 .display {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  font-size: 64px;
+
   height: 100px;
   width: 400px;
 
