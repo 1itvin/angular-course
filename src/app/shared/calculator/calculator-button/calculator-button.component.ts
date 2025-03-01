@@ -7,7 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './calculator-button.component.scss',
 })
 export class CalculatorButtonComponent {
-  @Input() operation: string = '';
-  @Input() displayValue: string = '';
-  @Input() handleClick: () => void = () => {};
+  @Input() operation = '';
+  @Input() displayValue = '';
+  @Input() handleClick: () => void = () => {
+    // функциональность будет реализована через инпут
+  };
 }

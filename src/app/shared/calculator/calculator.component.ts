@@ -124,9 +124,9 @@ export class CalculatorComponent {
     },
   ];
 
-  public currentTheme: string = 'light-theme';
+  public currentTheme = 'light-theme';
 
-  public currentValue: string = '0';
+  public currentValue = '0';
 
   public appendSymbol(symbol: string) {
     this.currentValue += symbol;
@@ -140,10 +140,10 @@ export class CalculatorComponent {
     const lastSymbolIndex = value.length - 1;
 
     if (
-      value[lastSymbolIndex] == '+' ||
-      value[lastSymbolIndex] == '-' ||
-      value[lastSymbolIndex] == '*' ||
-      value[lastSymbolIndex] == '/'
+      value[lastSymbolIndex] === '+' ||
+      value[lastSymbolIndex] === '-' ||
+      value[lastSymbolIndex] === '*' ||
+      value[lastSymbolIndex] === '/'
     ) {
       this.currentValue = value;
     } else if (lastSymbolIndex > 0) {
