@@ -10,10 +10,6 @@ import {
 import { ButtonConfig } from '../shared/interfaces/button-config.interface';
 import { CalculatorButtonComponent } from './calculator/calculator-button/calculator-button.component';
 
-// Честно говоря, у меня не получилось отобразить кнопки динамически через директиву так, чтобы работали гриды.
-// Только с помощью ИИ, танцев с бубном и более чем часовой работы этих двух компонентов в тандеме
-// удалось получить такой же результат, как и с помощью обычного хардкода
-
 @Directive({
   selector: '[appCalculatorButtons]',
 })
