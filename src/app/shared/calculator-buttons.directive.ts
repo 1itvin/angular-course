@@ -21,23 +21,23 @@ export class CalculatorButtonsDirective implements OnInit {
   @Input() buttonsConfig!: ButtonConfig[];
 
   constructor(
-    private _elRef: ElementRef,
-    private _renderer: Renderer2,
-    private _vcRef: ViewContainerRef
+    private elRef: ElementRef,
+    private renderer: Renderer2,
+    private vcRef: ViewContainerRef
   ) {}
 
   public ngOnInit() {
     this.buttonsConfig.forEach((buttonConfig) => {
-      const componentRef = this._vcRef.createComponent(
+      const componentRef = this.vcRef.createComponent(
         CalculatorButtonComponent
       );
       componentRef.instance.operation = buttonConfig.operation;
       componentRef.instance.displayValue = buttonConfig.displayValue;
       componentRef.instance.handleClick = buttonConfig.handleClick;
 
-      this._renderer.addClass(componentRef.location.nativeElement, 'btn');
-      this._renderer.appendChild(
-        this._elRef.nativeElement,
+      this.renderer.addClass(componentRef.location.nativeElement, 'btn');
+      this.renderer.appendChild(
+        this.elRef.nativeElement,
         componentRef.location.nativeElement
       );
     });
