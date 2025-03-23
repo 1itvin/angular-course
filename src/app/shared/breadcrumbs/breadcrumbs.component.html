@@ -1,0 +1,5 @@
+@for(breadcrumb of breadcrumbs; track breadcrumb.url){
+<a [routerLink]="[breadcrumb.url]">{{ breadcrumb.name }}</a>
+} @empty {
+<p>Нет хлебных крошек</p>
+}
