@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-import { CalculatorComponent } from './shared/calculator/calculator.component';
-import { MoreInfoButtonComponent } from './shared/more-info-button/more-info-button.component';
-import { UserInfoComponent } from './shared/user-info/user-info.component';
+import { FooterComponent } from './shared/layout/footer/footer.component';
+import { HeaderComponent } from './shared/layout/header/header.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     // components
-    CalculatorComponent,
-    MoreInfoButtonComponent,
-    UserInfoComponent,
+    FooterComponent,
+    HeaderComponent,
+
+    // modules
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
