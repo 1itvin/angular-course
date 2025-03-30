@@ -1,0 +1,31 @@
+@use "../../../../assets/styles/variables.scss" as var;
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px 8px;
+  color: var.$white;
+  background-color: var.$deep-purple;
+  text-align: center;
+
+  nav {
+    display: flex;
+    gap: 16px;
+
+    a {
+      font-size: 16px;
+      color: var.$white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+  }
+}

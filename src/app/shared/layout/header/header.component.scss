@@ -1,0 +1,90 @@
+@use "../../../../assets/styles/variables.scss" as var;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var.$white;
+  border-bottom: 1px solid var.$light-gray;
+
+  .wrapper {
+    display: flex;
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 16px;
+      }
+
+      .name {
+        font-size: 32px;
+        font-weight: bold;
+        color: var.$black;
+      }
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+
+      a {
+        margin: 0 10px;
+        font-size: 16px;
+        color: var.$slate-gray;
+        text-decoration: none;
+
+        &:hover {
+          color: var.$deep-purple;
+          border-bottom: 2px solid var.$deep-purple;
+        }
+      }
+    }
+
+    .add-new {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: var.$white;
+      background-color: var.$deep-purple;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+
+    .sign-up {
+      color: var.$deep-purple;
+      background-color: var.$white;
+    }
+
+    .sign-in {
+      color: var.$white;
+      background-color: var.$deep-purple;
+    }
+  }
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid var.$deep-purple;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
