@@ -2,24 +2,18 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-
   padding: 16px 8px;
-
   color: #fff;
   background-color: #6200ea;
-
   text-align: center;
 
   nav {
     display: flex;
-
     gap: 16px;
 
     a {
       font-size: 16px;
-
       color: #fff;
-
       text-decoration: none;
 
       &:hover {
@@ -30,7 +24,6 @@
 
   p {
     margin: 8px 0 0 0;
-
     font-size: 16px;
   }
 }
