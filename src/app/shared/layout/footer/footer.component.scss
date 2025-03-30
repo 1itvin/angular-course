@@ -1,10 +1,12 @@
+@use "../../../../assets/styles/variables.scss" as var;
+
 .footer {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 16px 8px;
-  color: #fff;
-  background-color: #6200ea;
+  color: var.$white;
+  background-color: var.$deep-purple;
   text-align: center;
 
   nav {
@@ -13,7 +15,7 @@
 
     a {
       font-size: 16px;
-      color: #fff;
+      color: var.$white;
       text-decoration: none;
 
       &:hover {
