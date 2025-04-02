@@ -1,9 +1,12 @@
-.wrapper {
+.app-container {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 
-  .main {
+  .main-content {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    position: relative;
   }
 }
