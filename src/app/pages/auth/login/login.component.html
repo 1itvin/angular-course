@@ -1,0 +1,39 @@
+<div class="login-wrapper">
+  <div class="login-form-container">
+    <form [formGroup]="form" class="form">
+      <header>
+        <h1>Access Account</h1>
+        <p>Welcome back! Please log in to continue</p>
+      </header>
+      <div class="input-box">
+        <app-input formControlName="email" label="Enter your username"
+          ><mat-icon>person_outline</mat-icon></app-input
+        >
+      </div>
+      <div class="input-box">
+        <app-input formControlName="password" label="Enter your password"
+          ><mat-icon>lock_outline</mat-icon></app-input
+        >
+      </div>
+      <div class="forgot-password-link">
+        <a>Forget your password?</a>
+      </div>
+      <button
+        mat-flat-button
+        type="submit"
+        class="login-button"
+        [disabled]="!form.valid"
+        (click)="handleValue()"
+      >
+        Log In
+        <mat-icon>login</mat-icon>
+      </button>
+      <div class="login-register">
+        <p>
+          Need to create an account?
+          <a class="register-link" routerLink="/registration">Sign Up</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
