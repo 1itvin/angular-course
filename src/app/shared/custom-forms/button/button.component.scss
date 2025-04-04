@@ -1,0 +1,31 @@
+@use "../../../../assets/styles/variables.scss" as var;
+
+:host {
+  display: inline-block;
+}
+
+:host(.outline) button {
+  color: var.$deep-purple;
+  background-color: var.$white;
+  border: 1px solid var.$deep-purple;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  padding: 8px 16px;
+  height: 36px;
+  font-size: 16px;
+  color: var.$white;
+  background-color: var.$deep-purple;
+  border: 1px solid var.$deep-purple;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+mat-icon {
+  margin-right: 8px;
+}
