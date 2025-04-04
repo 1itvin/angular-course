@@ -1,0 +1,16 @@
+.book-details-and-like {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+
+  .like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
