@@ -1,18 +1,26 @@
 <header class="header">
   <div class="wrapper">
     <div class="logo">
-      <img alt="logo" />
+      <!-- <img alt="logo" /> -->
+      <mat-icon>book</mat-icon>
       <span class="name">Book Haven</span>
     </div>
-    <nav class="nav">
-      <a>Homepage</a>
-      <a>Categories</a>
-    </nav>
-    <button class="add-new">Add New</button>
+    <mat-tab-group
+      class="tab-group"
+      [selectedIndex]="selectedIndex"
+      (selectedIndexChange)="onTabChange($event)"
+    >
+      <mat-tab label="Homepage"></mat-tab>
+      <mat-tab label="Categories"></mat-tab>
+    </mat-tab-group>
+
+    <div class="button-container">
+      <app-button>Add New</app-button>
+    </div>
   </div>
 
-  <div class="auth-buttons">
-    <button class="sign-up">Sign Up</button>
-    <button class="sign-in">Sign In</button>
+  <div class="button-container">
+    <app-button [outline]="true" icon="person_add">Sign Up</app-button>
+    <app-button icon="person">Sign In</app-button>
   </div>
 </header>
