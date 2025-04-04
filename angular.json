@@ -32,8 +32,10 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/styles/normalize.css"
+              "src/assets/styles/normalize.css",
+              "src/assets/styles/fonts.scss",
+              "src/assets/styles/material-icons.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -92,8 +94,10 @@
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/styles/normalize.css"
+              "src/assets/styles/normalize.css",
+              "src/assets/styles/fonts.scss",
+              "src/assets/styles/material-icons.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -111,6 +115,9 @@
     }
   },
   "cli": {
-    "schematicCollections": ["angular-eslint"]
+    "schematicCollections": [
+      "angular-eslint"
+    ],
+    "analytics": false
   }
 }
