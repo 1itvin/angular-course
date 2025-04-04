@@ -1,0 +1,7 @@
+<mat-icon
+  class="heart-icon"
+  [class.favorited]="isFavorited"
+  (click)="toggleHeart()"
+>
+  {{ isFavorited ? "favorite" : "favorite_border" }}
+</mat-icon>
