@@ -1,16 +1,20 @@
-.book-details-and-like {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 4px;
+.book-card {
+  width: 450px;
 
-  .like {
+  .book-details-and-like {
     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
+    justify-content: space-between;
+    padding: 0 4px;
 
-.button-container {
-  display: flex;
-  justify-content: space-between;
+    .like {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
