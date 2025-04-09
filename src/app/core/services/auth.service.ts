@@ -19,6 +19,12 @@ export class AuthService {
     .getUser()
     .pipe(map((user) => user !== null));
 
+  public getUserRolesFromStrings(roleStrings: string[]): Role[] {
+    return roleStrings.map(
+      (role: string) => ({ name: role } as unknown as Role)
+    );
+  }
+
   /**
    * Авторизация пользователя с использованием имени и пароля
    * @param {string} email - почта пользователя
@@ -37,9 +43,7 @@ export class AuthService {
             id: Number(res.id),
             username: res.username,
             email: res.email,
-            roles: res.roles.map(
-              (role: string) => ({ name: role } as unknown as Role)
-            ),
+            roles: this.getUserRolesFromStrings(res.roles),
           };
           this.userService.setUser(user);
         })
