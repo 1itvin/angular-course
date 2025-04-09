@@ -3,14 +3,13 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { BASE_PATH } from '../constants/api.consts';
-import { Book } from '../models/book.model';
-import { BookResponse } from '../models/book-response.model';
+import { Book, BookResponse } from '../models/book.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   public postBook(bookInfo: Partial<Book>): Observable<BookResponse> {
     return this.http.post<BookResponse>(`${BASE_PATH}/book/add`, bookInfo);

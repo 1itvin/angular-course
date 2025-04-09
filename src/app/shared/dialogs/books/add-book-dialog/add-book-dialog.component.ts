@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-import { Book } from '../../../../core/models/book.model';
+import { Book } from '../../../../core/models/book.type';
 import { BookService } from '../../../../core/services/book.service';
 import { InputComponent } from '../../../custom-forms/input/input.component';
 
