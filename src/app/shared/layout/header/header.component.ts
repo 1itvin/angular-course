@@ -1,8 +1,13 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { ToastrService } from 'ngx-toastr';
-import { Subscription } from 'rxjs';
 
 import { AddBookDialogComponent } from '../../dialogs/books/add-book-dialog/add-book-dialog.component';
 
@@ -12,17 +17,18 @@ import { AddBookDialogComponent } from '../../dialogs/books/add-book-dialog/add-
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnDestroy, OnInit {
-  private dialogRefSub!: Subscription;
-
+export class HeaderComponent implements OnInit {
+  private readonly destroyRef = inject(DestroyRef);
   private readonly dialog = inject(MatDialog);
   private readonly toastr = inject(ToastrService);
 
   public ngOnInit(): void {
-    this.dialogRefSub = this.dialog.afterAllClosed.subscribe(() => {
-      this.showError();
-      this.showSuccess();
-    });
+    this.dialog.afterAllClosed
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.showError();
+        this.showSuccess();
+      });
   }
 
   public openAddDialog(): void {
@@ -35,11 +41,5 @@ export class HeaderComponent implements OnDestroy, OnInit {
 
   public showError(): void {
     this.toastr.error('Error adding the book');
-  }
-
-  public ngOnDestroy(): void {
-    if (this.dialogRefSub) {
-      this.dialogRefSub.unsubscribe();
-    }
   }
 }
