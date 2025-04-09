@@ -1,0 +1,15 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  mat-icon {
+    margin-left: 4px;
+  }
+}
