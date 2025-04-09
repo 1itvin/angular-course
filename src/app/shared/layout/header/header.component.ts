@@ -1,7 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterModule } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { ButtonComponent } from '../../custom-forms/button/button.component';
 
@@ -23,18 +24,20 @@ import { ButtonComponent } from '../../custom-forms/button/button.component';
 export class HeaderComponent implements OnInit {
   public selectedIndex = -1;
 
-  private router = inject(Router);
-
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly router = inject(Router);
   private readonly routeMap: Record<string, number> = {
     '/home': 0,
     '/categories': 1,
   } as const;
 
   public ngOnInit() {
-    this.router.events.subscribe(() => {
-      const currentUrl = this.router.url;
-      this.selectedIndex = this.getSelectedIndex(currentUrl);
-    });
+    this.router.events
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        const currentUrl = this.router.url;
+        this.selectedIndex = this.getSelectedIndex(currentUrl);
+      });
   }
 
   public onTabChange(index: number) {
