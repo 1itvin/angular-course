@@ -1,8 +1,9 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { IndividualConfig, provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
+
+import { IndividualConfig, provideToastr } from 'ngx-toastr';
 
 import { authorizationInterceptor } from './core/interceptors/authorization.interceptor';
 import { routes } from './app.routes';
@@ -18,12 +19,12 @@ const toastrConfig: Partial<IndividualConfig> = {
   newestOnTop: true, // Новые уведомления размещаются сверху
   progressBar: true, // Показывать прогресс-бар
   progressAnimation: 'decreasing', // Убывающая анимация прогресс-бара
-  toastClass: 'ngx-toastr', // CSS класс для тостов //
+  toastClass: 'ngx-toastr', // CSS класс для тостов 
   positionClass: 'toast-top-right', // Позиция уведомления на экране
-  titleClass: 'toast-title', // CSS класс для заголовков //
-  messageClass: 'toast-message', // CSS класс для сообщений //
-  tapToDismiss: true, // Закрытие уведомления при клике //
-  onActivateTick: false, // Не требуется ручное обновление в ChangeDetectorRef //
+  titleClass: 'toast-title', // CSS класс для заголовков 
+  messageClass: 'toast-message', // CSS класс для сообщений 
+  tapToDismiss: true, // Закрытие уведомления при клике 
+  onActivateTick: false, // Не требуется ручное обновление в ChangeDetectorRef 
 };
 
 export const appConfig: ApplicationConfig = {
