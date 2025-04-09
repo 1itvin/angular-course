@@ -1,0 +1,20 @@
+<mat-form-field [appearance]="appearance">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [type]="type"
+    [disabled]="disabled$ | async"
+    [readonly]="readonly"
+    [required]="required"
+    (blur)="onTouch()"
+    (input)="onInputChange($event)"
+  />
+  <ng-container matSuffix>
+    <ng-content></ng-content>
+  </ng-container>
+  @if(control.errors){
+  <mat-error>
+    {{ control.errors | json }}
+  </mat-error>
+  }
+</mat-form-field>
