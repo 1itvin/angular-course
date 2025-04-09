@@ -5,6 +5,7 @@
       <mat-icon>book</mat-icon>
       <span class="name">Book Haven</span>
     </div>
+
     <mat-tab-group
       class="tab-group"
       [selectedIndex]="selectedIndex"
@@ -15,7 +16,7 @@
     </mat-tab-group>
 
     <div class="button-container">
-      <app-button>Add New</app-button>
+      <app-button (click)="openAddDialog()">Add New</app-button>
     </div>
   </div>
 
