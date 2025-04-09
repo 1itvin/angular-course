@@ -1,9 +1,10 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { AddBookDialogComponent } from '../../dialogs/books/add-book-dialog/add-book-dialog.component';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
+
+import { AddBookDialogComponent } from '../../dialogs/books/add-book-dialog/add-book-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,10 @@ import { Subscription } from 'rxjs';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnDestroy, OnInit {
-  private dialog = inject(MatDialog);
   private dialogRefSub!: Subscription;
-  private toastr = inject(ToastrService);
 
-  public openAddDialog(): void {
-    this.dialog.open(AddBookDialogComponent);
-  }
+  private readonly dialog = inject(MatDialog);
+  private readonly toastr = inject(ToastrService);
 
   public ngOnInit(): void {
     this.dialogRefSub = this.dialog.afterAllClosed.subscribe(() => {
@@ -27,12 +25,16 @@ export class HeaderComponent implements OnDestroy, OnInit {
     });
   }
 
+  public openAddDialog(): void {
+    this.dialog.open(AddBookDialogComponent);
+  }
+
   public showSuccess(): void {
-    this.toastr.success('Книга успешно добавлена!');
+    this.toastr.success('The book has been successfully added!');
   }
 
   public showError(): void {
-    this.toastr.error('Ошибка при добавлении книги');
+    this.toastr.error('Error adding the book');
   }
 
   public ngOnDestroy(): void {

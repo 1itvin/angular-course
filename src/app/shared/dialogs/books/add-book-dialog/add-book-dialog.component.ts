@@ -24,9 +24,9 @@ import { InputComponent } from '../../../custom-forms/input/input.component';
 export class AddBookDialogComponent {
   public form: FormGroup;
 
-  private bookService = inject(BookService);
-  private dialogRef = inject(MatDialogRef<AddBookDialogComponent>);
-  private fb = inject(FormBuilder);
+  private readonly bookService = inject(BookService);
+  private readonly dialogRef = inject(MatDialogRef<AddBookDialogComponent>);
+  private readonly fb = inject(FormBuilder);
 
   constructor() {
     this.form = this.fb.group({

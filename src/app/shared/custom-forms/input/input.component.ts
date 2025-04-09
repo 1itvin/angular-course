@@ -49,7 +49,7 @@ export class InputComponent implements ControlValueAccessor {
     false
   );
 
-  private controlContainer = inject(ControlContainer);
+  private readonly controlContainer = inject(ControlContainer);
 
   public onChange: (value: string | number | null) => void = () => {
     // TODO: Implement onChange functionality
