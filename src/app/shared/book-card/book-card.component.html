@@ -1,0 +1,13 @@
+<mat-card class="book-card">
+  <mat-card-content>
+    <app-book-image></app-book-image>
+    <div class="book-details-and-like">
+      <app-book-details></app-book-details>
+      <app-like class="like"></app-like>
+    </div>
+    <mat-card-actions class="button-container">
+      <app-button [outline]="true" icon="edit">Edit</app-button>
+      <app-button [outline]="true" icon="delete">Delete</app-button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

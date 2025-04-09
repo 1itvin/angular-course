@@ -34,6 +34,8 @@
             "styles": [
               "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/assets/styles/normalize.css",
+              "src/assets/styles/fonts.scss",
+              "src/assets/styles/material-icons.scss",
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],
@@ -96,6 +98,8 @@
             "styles": [
               "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/assets/styles/normalize.css",
+              "src/assets/styles/fonts.scss",
+              "src/assets/styles/material-icons.scss",
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],

@@ -1,0 +1,25 @@
+@use "../../../../assets/styles/variables.scss" as var;
+
+.heart-icon {
+  cursor: pointer;
+  color: var.$black;
+  scale: 1.5;
+  transition: color 0.3s ease, transform 0.6s ease;
+
+  &:hover {
+    color: var.$deep-purple;
+  }
+
+  &:active {
+    transform: scale(1.7);
+    color: var.$deep-purple;
+  }
+
+  &.favorited {
+    color: var.$deep-purple;
+
+    &:hover {
+      color: var.$slate-gray;
+    }
+  }
+}
