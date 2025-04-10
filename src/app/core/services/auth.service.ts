@@ -20,20 +20,20 @@ export class AuthService {
 
   /**
    * Авторизация пользователя с использованием имени и пароля
-   * @param {string} email - почта пользователя
+   * @param {string} username - имя пользователя
    * @param {string} password - пароль пользователя
    * @returns ответ на запрос авторизации с информацией о пользователе
    */
-  public login(email: string, password: string): Observable<UserResponse> {
+  public login(username: string, password: string): Observable<UserResponse> {
     return this.http
-      .post<UserResponse>(`${BASE_PATH}/auth/login`, {
-        email,
+      .post<UserResponse>(`${BASE_PATH}/users`, {
+        username,
         password,
       })
       .pipe(
         tap((res) => {
           const user: User = {
-            id: Number(res.id),
+            id: res.id,
             username: res.username,
             email: res.email,
             roles: getUserRolesFromString(res.roles),
