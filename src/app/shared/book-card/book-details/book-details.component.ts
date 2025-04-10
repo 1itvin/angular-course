@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-book-details',
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './book-details.component.html',
   styleUrl: './book-details.component.scss',
 })
-export class BookDetailsComponent {}
+export class BookDetailsComponent {
+  @Input() title!: string;
+  @Input() author?: string;
+  @Input() publicationYear!: Date;
+}
