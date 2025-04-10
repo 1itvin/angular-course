@@ -7,7 +7,4 @@ export type UserResponse = {
   roles: string[];
 };
 
-export type User = Omit<UserResponse, 'id' | 'roles'> & {
-  id: number;
-  roles: Role[];
-};
+export type User = Omit<UserResponse, 'roles'> & { roles: Role[] };
