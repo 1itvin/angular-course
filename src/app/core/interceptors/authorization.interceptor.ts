@@ -1,15 +1,13 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 
+import { ACCESS_TOKEN } from '../constants/tokens.consts';
 import { LocalStorageService } from '../services/local-storage.service';
-import { localStorageTokens } from '../models/enums/local-storage-tokens.enum';
 
 export const authorizationInterceptor: HttpInterceptorFn = (req, next) => {
   const ls = inject(LocalStorageService);
-  if (ls.has(localStorageTokens.ACCESS_TOKEN)) {
-    const tokenData = ls.get<{ token: string }>(
-      localStorageTokens.ACCESS_TOKEN
-    );
+  if (ls.has(ACCESS_TOKEN)) {
+    const tokenData = ls.get<{ token: string }>(ACCESS_TOKEN);
     if (tokenData && tokenData.token) {
       const token = tokenData.token;
       req = req.clone({
