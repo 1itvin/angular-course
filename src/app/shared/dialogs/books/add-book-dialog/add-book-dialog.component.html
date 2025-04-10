@@ -1,8 +1,6 @@
 <div mat-dialog-title class="title">
   <span>Add book</span>
-  <button mat-icon-button [mat-dialog-close]="false">
-    <mat-icon>close</mat-icon>
-  </button>
+  <app-button icon="close" [mat-dialog-close]="false"></app-button>
 </div>
 
 <mat-dialog-content class="mat-typography">
@@ -17,9 +15,6 @@
   </form>
 </mat-dialog-content>
 
-<mat-dialog-actions align="end">
-  <button mat-flat-button color="warn" (click)="save()" class="save-button">
-    Submit
-    <mat-icon>check_circle_outline</mat-icon>
-  </button>
+<mat-dialog-actions>
+  <app-button icon="check_circle" (click)="save()">Submit</app-button>
 </mat-dialog-actions>
