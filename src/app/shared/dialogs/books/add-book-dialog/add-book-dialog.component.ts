@@ -14,6 +14,7 @@ import { InputComponent } from '../../../custom-forms/input/input.component';
     // components
     ButtonComponent,
     InputComponent,
+
     // modules
     MatIconModule,
     MatDialogModule,
@@ -34,7 +35,8 @@ export class AddBookDialogComponent {
       title: [null],
       author: [null],
       genre: [null],
-      publicationYear: [null],
+      publication_year: [null],
+      // image_url: [null],
     });
   }
 
