@@ -1,1 +1,12 @@
-<app-book-card></app-book-card>
+<div class="container">
+  @for(book of books; track book.id){
+  <app-book-card
+    [id]="book.id"
+    [imageSource]="book.image_url"
+    [title]="book.title"
+    [author]="book.author"
+    [publicationYear]="book.publication_year"
+  >
+  </app-book-card>
+  }
+</div>
