@@ -21,7 +21,9 @@
   </div>
 
   <div class="button-container">
-    <app-button [outline]="true" icon="person_add">Sign Up</app-button>
-    <app-button icon="person">Sign In</app-button>
+    <app-button [outline]="true" icon="person_add" routerLink="/registration"
+      >Sign Up</app-button
+    >
+    <app-button icon="person" routerLink="/login">Sign In</app-button>
   </div>
 </header>
