@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
+import { catchError, map, Observable, tap, throwError } from 'rxjs';
 
 import { BASE_PATH } from '../constants/api.consts';
-import { Role } from '../models/enums/roles.enum';
-import { User } from '../models/user.model';
-import { UserResponse } from '../models/user-response.model';
+import { getUserRolesFromString } from '../models/role.type';
+import { User, UserResponse } from '../models/user.type';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -18,12 +17,6 @@ export class AuthService {
   public isLoggedIn$: Observable<boolean> = this.userService
     .getUser()
     .pipe(map((user) => user !== null));
-
-  public getUserRolesFromStrings(roleStrings: string[]): Role[] {
-    return roleStrings.map(
-      (role: string) => ({ name: role } as unknown as Role)
-    );
-  }
 
   /**
    * Авторизация пользователя с использованием имени и пароля
@@ -43,9 +36,13 @@ export class AuthService {
             id: Number(res.id),
             username: res.username,
             email: res.email,
-            roles: this.getUserRolesFromStrings(res.roles),
+            roles: getUserRolesFromString(res.roles),
           };
           this.userService.setUser(user);
+        }),
+        catchError((error) => {
+          console.error('Login error:', error);
+          return throwError(() => new Error('Failed to log in'));
         })
       );
   }
