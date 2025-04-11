@@ -4,7 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Genre } from '../../core/models/genre.type';
-import { GenreCardComponent } from '../../shared/genre-card/genre-card.component';
+import { GenreCardComponent } from '../../shared/cards/genre-card/genre-card.component';
 import { GenreService } from '../../core/services/genre.service';
 import { RelationType } from '../../core/models/relation-type.type';
 

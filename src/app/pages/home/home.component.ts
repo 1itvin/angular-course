@@ -2,7 +2,7 @@ import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Book } from '../../core/models/book.type';
-import { BookCardComponent } from '../../shared/book-card/book-card.component';
+import { BookCardComponent } from '../../shared/cards/book-card/book-card.component';
 import { BookService } from './../../core/services/book.service';
 
 @Component({

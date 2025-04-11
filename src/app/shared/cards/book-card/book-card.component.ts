@@ -4,9 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookImageComponent } from './book-image/book-image.component';
-import { BookService } from '../../core/services/book.service';
-import { ButtonComponent } from '../custom-forms/button/button.component';
-import { EditBookDialogComponent } from '../dialogs/books/edit-book-dialog/edit-book-dialog.component';
+import { BookService } from '../../../core/services/book.service';
+import { ButtonComponent } from '../../custom-forms/button/button.component';
+import { EditBookDialogComponent } from '../../dialogs/books/edit-book-dialog/edit-book-dialog.component';
 import { LikeComponent } from './like/like.component';
 
 @Component({
