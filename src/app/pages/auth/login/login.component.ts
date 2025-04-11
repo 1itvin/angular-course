@@ -17,7 +17,6 @@ import { InputComponent } from '../../../shared/custom-forms/input/input.compone
   imports: [
     // components
     InputComponent,
-
     // modules
     MatIconModule,
     ReactiveFormsModule,
@@ -32,7 +31,7 @@ export class LoginComponent {
   private router = inject(Router);
 
   public form = new FormGroup({
-    email: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
@@ -42,11 +41,11 @@ export class LoginComponent {
   public handleValue(): void {
     console.log(this.form.value);
 
-    const email = this.form.controls['email'].value;
+    const username = this.form.controls['username'].value;
     const password = this.form.controls['password'].value;
 
     this.authService
-      .login(email!, password!)
+      .login(username!, password!)
       .pipe(
         tap(() => {
           this.router.navigate(['/home']);

@@ -1,0 +1,14 @@
+<div class="categories-container">
+  <div class="list">
+    @for(genre of genres; track genre.id){
+    <app-genre-card [genre]="genre.name"></app-genre-card>
+    }
+  </div>
+
+  <div class="list">
+    @for(relationType of relationTypes; track relationType.id){
+    <app-genre-card [genre]="relationType.name"></app-genre-card>
+    }
+  </div>
+  <mat-divider class="divider"></mat-divider>
+</div>

@@ -1,0 +1,12 @@
+@use "../../../../../assets/styles/variables.scss" as var;
+
+.book-name {
+  font-weight: bold;
+  font-size: 32px;
+  color: var.$white;
+}
+
+.book-author-and-year {
+  font-size: 16px;
+  color: var.$slate-gray;
+}

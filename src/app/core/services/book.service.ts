@@ -12,14 +12,25 @@ export class BookService {
   private readonly http = inject(HttpClient);
 
   public postBook(bookInfo: Partial<Book>): Observable<BookResponse> {
-    return this.http.post<BookResponse>(`${BASE_PATH}/book/add`, bookInfo);
+    return this.http.post<BookResponse>(`${BASE_PATH}/books`, bookInfo);
   }
 
-  public getBookById(id: number): Observable<Book> {
-    return this.http.get<Book>(`${BASE_PATH}/book/${id}`);
+  public getBookById(id: string): Observable<Book> {
+    return this.http.get<Book>(`${BASE_PATH}/books/${id}`);
   }
 
   public getAllBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${BASE_PATH}/book`);
+    return this.http.get<Book[]>(`${BASE_PATH}/books`);
+  }
+
+  public updateBook(
+    id: string,
+    bookInfo: Partial<Book>
+  ): Observable<BookResponse> {
+    return this.http.put<BookResponse>(`${BASE_PATH}/books/${id}`, bookInfo);
+  }
+
+  public deleteBook(id: string): Observable<void> {
+    return this.http.delete<void>(`${BASE_PATH}/books/${id}`);
   }
 }

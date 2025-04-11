@@ -12,5 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class ButtonComponent {
   @HostBinding('class.outline') @Input() outline = false;
+  @Input() disabed = false;
   @Input() icon?: string;
 }

@@ -1,0 +1,18 @@
+.categories-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  padding: 32px;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin: 16px;
+  }
+
+  .divider {
+    margin: 16px 0;
+  }
+}
