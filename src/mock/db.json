@@ -14,13 +14,31 @@
     }
   ],
   "roles": [
-    { "id": "1", "name": "admin" },
-    { "id": "2", "name": "user" }
+    {
+      "id": "1",
+      "name": "admin"
+    },
+    {
+      "id": "2",
+      "name": "user"
+    }
   ],
   "user_roles": [
-    { "id": "1", "user_id": "1", "role_id": "1" },
-    { "id": "2", "user_id": "1", "role_id": "2" },
-    { "id": "3", "user_id": "2", "role_id": "2" }
+    {
+      "id": "1",
+      "user_id": "1",
+      "role_id": "1"
+    },
+    {
+      "id": "2",
+      "user_id": "1",
+      "role_id": "2"
+    },
+    {
+      "id": "3",
+      "user_id": "2",
+      "role_id": "2"
+    }
   ],
   "books": [
     {
@@ -67,35 +85,128 @@
     }
   ],
   "genres": [
-    { "id": "1", "name": "Fiction" },
-    { "id": "2", "name": "Mystery" },
-    { "id": "3", "name": "Science" },
-    { "id": "4", "name": "History" },
-    { "id": "5", "name": "Self-Help" }
+    {
+      "id": "1",
+      "name": "Fiction"
+    },
+    {
+      "id": "2",
+      "name": "Mystery"
+    },
+    {
+      "id": "3",
+      "name": "Science"
+    },
+    {
+      "id": "4",
+      "name": "History"
+    },
+    {
+      "id": "5",
+      "name": "Self-Help"
+    }
   ],
   "book_genres": [
-    { "id": "1", "book_id": "1", "genre_id": "1" },
-    { "id": "2", "book_id": "1", "genre_id": "2" },
-    { "id": "3", "book_id": "2", "genre_id": "2" },
-    { "id": "4", "book_id": "3", "genre_id": "2" },
-    { "id": "5", "book_id": "3", "genre_id": "3" },
-    { "id": "6", "book_id": "4", "genre_id": "4" },
-    { "id": "7", "book_id": "5", "genre_id": "4" },
-    { "id": "8", "book_id": "5", "genre_id": "5" },
-    { "id": "9", "book_id": "6", "genre_id": "1" },
-    { "id": "10", "book_id": "6", "genre_id": "4" },
-    { "id": "11", "book_id": "7", "genre_id": "1" }
+    {
+      "id": "1",
+      "book_id": "1",
+      "genre_id": "1"
+    },
+    {
+      "id": "2",
+      "book_id": "1",
+      "genre_id": "2"
+    },
+    {
+      "id": "3",
+      "book_id": "2",
+      "genre_id": "2"
+    },
+    {
+      "id": "4",
+      "book_id": "3",
+      "genre_id": "2"
+    },
+    {
+      "id": "5",
+      "book_id": "3",
+      "genre_id": "3"
+    },
+    {
+      "id": "6",
+      "book_id": "4",
+      "genre_id": "4"
+    },
+    {
+      "id": "7",
+      "book_id": "5",
+      "genre_id": "4"
+    },
+    {
+      "id": "8",
+      "book_id": "5",
+      "genre_id": "5"
+    },
+    {
+      "id": "9",
+      "book_id": "6",
+      "genre_id": "1"
+    },
+    {
+      "id": "10",
+      "book_id": "6",
+      "genre_id": "4"
+    },
+    {
+      "id": "11",
+      "book_id": "7",
+      "genre_id": "1"
+    }
   ],
   "relation_types": [
-    { "id": "1", "name": "Favorite" },
-    { "id": "2", "name": "Read" },
-    { "id": "3", "name": "Planned" }
+    {
+      "id": "1",
+      "name": "Favorite"
+    },
+    {
+      "id": "2",
+      "name": "Read"
+    },
+    {
+      "id": "3",
+      "name": "Planned"
+    }
   ],
   "user_books": [
-    { "id": "1", "user_id": "1", "book_id": "1", "relation_type_id": "1" },
-    { "id": "2", "user_id": "2", "book_id": "2", "relation_type_id": "2" },
-    { "id": "3", "user_id": "2", "book_id": "3", "relation_type_id": "3" },
-    { "id": "4", "user_id": "2", "book_id": "4", "relation_type_id": "1" },
-    { "id": "5", "user_id": "2", "book_id": "5", "relation_type_id": "2" }
+    {
+      "id": "1",
+      "user_id": "1",
+      "book_id": "1",
+      "relation_type_id": "1"
+    },
+    {
+      "id": "2",
+      "user_id": "2",
+      "book_id": "2",
+      "relation_type_id": "2"
+    },
+    {
+      "id": "3",
+      "user_id": "2",
+      "book_id": "3",
+      "relation_type_id": "3"
+    },
+    {
+      "id": "4",
+      "user_id": "2",
+      "book_id": "4",
+      "relation_type_id": "1"
+    },
+    {
+      "id": "5",
+      "user_id": "2",
+      "book_id": "5",
+      "relation_type_id": "2"
+    }
   ]
 }

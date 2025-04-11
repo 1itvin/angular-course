@@ -35,7 +35,9 @@ export class BookCardComponent {
   private readonly dialog = inject(MatDialog);
 
   public openEditDialog(): void {
-    this.dialog.open(EditBookDialogComponent);
+    this.dialog.open(EditBookDialogComponent, {
+      data: { id: this.id },
+    });
   }
 
   public delete() {

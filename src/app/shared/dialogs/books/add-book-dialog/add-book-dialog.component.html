@@ -4,16 +4,7 @@
 </div>
 
 <mat-dialog-content class="mat-typography">
-  <form [formGroup]="form">
-    <app-input formControlName="title" label="Title"></app-input>
-    <app-input formControlName="author" label="Author"></app-input>
-    <app-input formControlName="genre" label="Genre"></app-input>
-    <app-input
-      formControlName="publication_year"
-      label="Publication Year"
-    ></app-input>
-    <!-- <app-input formControlName="image_url" label="Image URL"></app-input> -->
-  </form>
+  <app-book-form></app-book-form>
 </mat-dialog-content>
 
 <mat-dialog-actions>
