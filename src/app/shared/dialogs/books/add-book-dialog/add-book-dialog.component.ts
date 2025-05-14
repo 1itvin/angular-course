@@ -5,12 +5,14 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { Book } from '../../../../core/models/book.type';
 import { BookService } from '../../../../core/services/book.service';
+import { ButtonComponent } from '../../../custom-forms/button/button.component';
 import { InputComponent } from '../../../custom-forms/input/input.component';
 
 @Component({
   selector: 'app-add-book-dialog',
   imports: [
     // components
+    ButtonComponent,
     InputComponent,
 
     // modules
@@ -33,7 +35,8 @@ export class AddBookDialogComponent {
       title: [null],
       author: [null],
       genre: [null],
-      publicationYear: [null],
+      publication_year: [null],
+      // image_url: [null],
     });
   }
 
